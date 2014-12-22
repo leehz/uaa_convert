@@ -1,0 +1,74 @@
+-------------------
+
+- Oracle 10g: 2
+- sql: 1
+- datebase: 1
+
+
+----------------------
+
+- SNMP ?
+
+-----------SQL--------
+
+select distinct name,password,screenName  from typecho_users where name in ('admin') and screenName = "admin";
+
+ select distinct name,password,screenName  from typecho_users where name in ('admin') and screenName = "admin" order by name asc;
+
+  select distinct count(name) from typecho_users where name in ('admin');
+
+--------
+AVG(平均)
+COUNT(计数)
+MAX(最大值)
+MIN(最小值)
+SUM(总和)
+---------
+select "函数名"("栏位名") from "表格名";
+
+select distinct count(XXXX) from T_XXX where XXX=? OR XXX > ?;
+
+-----------------------------------
+
+ALIAS:
+select "表格别名"."栏位1" "栏位别名" from "表格名" "表格别名";
+JOIN:
+select * from table1, table2;
+-----------------------------------
+
+UNION:群集
+INTERSECT:交集
+MINUS: 如果存在第一个，删除第二个的结果
+TRIM:删除空白
+
+---------------------------------------------
+
+CREATE TABLE "表格名"
+("栏位一" "栏位一资料种类"，
+ "栏位二" "栏位二资料种类",
+ ....
+ );
+
+CREATE VIEW "VIEW_NAME" AS "SQL..."
+
+CREATE INDEX "INDEX_NAME" ON "TABLE_NAME"(COLUMN_NAME);
+
+---------------------------------------
+
+ALTER TABLE "table_name"
+    ADD "栏位1" "栏位1 资料种类"
+    DROP "栏位1"
+    CHANGE "原来栏位名" "新栏位名" "新栏位种类"
+    MODIFY "栏位1" "新资料种类"
+
+    alter table table1 modify   c3 char(20) primary key;
+
+TRUNCATE TABLE "表格名" 删除表内容，保留表结构
+--------------------------
+
+
+INSERT INTO "表格名" ("栏位1"， "栏位2", ....) values ("值1", "值2")
+ 
+update ... set ... where...   update table1 set {...} where {...}
+delete from table1 where {...}
+
