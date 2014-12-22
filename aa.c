@@ -17,29 +17,29 @@ int main(int argc, char **argv)
     {
         if(0 < (a = atoi(argv[1])))
         {       for (i = 8*sizeof(char)-1; i >= 0; --i)
-                {
-                if ((a >> i) & 0x01) 
-                putchar('1');
-                else 
-                putchar('0');
-                }
-        printf("\t0x%x\t0%o", a, a);
-        }
+            {
+                if ((a >> i) & 0x01)
+                    putchar('1');
                 else
-                {
-                p = argv[1];
-                while(*p)
-                {
+                    putchar('0');
+            }
+            printf("\t0x%x\t0%o", a, a);
+        }
+        else
+        {
+            p = argv[1];
+            while(*p)
+            {
                 a = *p++;
                 for (i = 8*sizeof(char)-1; i >= 0; --i)
                 {
-                if ((a >> i) & 0x01) putchar('1');
-                else putchar('0');
+                    if ((a >> i) & 0x01) putchar('1');
+                    else putchar('0');
                 }
-        printf("\t0x%x\t0%o", a, a);
+                printf("\t0x%x\t0%o", a, a);
                 putchar('\n');
-                }
-                }
+            }
+        }
         putchar('\n');
     }
 }

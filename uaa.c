@@ -10,7 +10,7 @@ int main(int argc, char **argv)
     {
         printf("usage: %s <number>\n", argv[0]);
     }
-    else 
+    else
     {
         if(0 != (a = strtol(argv[1], NULL, 2)))
             printf("%d\t%c\n", a, a);

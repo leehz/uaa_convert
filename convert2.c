@@ -31,7 +31,7 @@ int convert_s(char *str)
 {
     char *buf = malloc(sizeof(char)*8);
     int i;
-    for(;*str;str+=8)   
+    for(;*str;str+=8)
     {   i = strtol(strncpy(buf, str, 8), NULL, 2);
         //i = atoi(strncpy(buf, str, 2));
         printf("%c", i);
