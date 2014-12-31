@@ -29,10 +29,10 @@ int convert(char *xcode)
 
 int convert_s(char *str)
 {
-    char *buf = malloc(sizeof(char)*8);
+    char *buf = malloc(sizeof(char)*2);
     int i;
-    for(;*str;str+=8)
-    {   i = strtol(strncpy(buf, str, 8), NULL, 2);
+    for(;*str;str+=2)
+    {   i = strtol(strncpy(buf, str, 2), NULL, 16);
         //i = atoi(strncpy(buf, str, 2));
         printf("%c", i);
     }
@@ -42,18 +42,18 @@ int convert_s(char *str)
 
 int info(char *str)
 {
-    printf("str: %s\t sizeof(str):%d\tlen:%d\n", str, sizeof(str), strlen(str));
+    printf("str: %s\t sizeof(str):%ld\tlen:%ld\n", str, sizeof(str), strlen(str));
     // compare
     strcpy(str, "中文测试");
-    printf("str: %s\t sizeof(str):%d\tlen:%d\n", str, sizeof(str), strlen(str));
+    printf("str: %s\t sizeof(str):%ld\tlen:%ld\n", str, sizeof(str), strlen(str));
     char *tmp = str;
     int len = strlen(str);
     while(*str)
-        printf("%0l", *str++);
+        printf("%d", *str++);
     str = str - len; //strlen(str);
     printf("~~~~~%s~~~~%s~~\n", str, tmp);
     while(*tmp)
-        printf("%l", *tmp++);
+        printf("%d", *tmp++);
     printf("-------------\n");
     return 0;
 }
